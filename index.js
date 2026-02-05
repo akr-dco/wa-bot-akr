@@ -42,7 +42,7 @@ client.on('disconnected', (reason) => {
 
 client.initialize();
 app.listen(3000, () => {
-    console.log('🚀 The server is running on http://192.168.192.80:3000');
+    console.log('🚀 The server is running on http://192.168.150.150:3000');
 });
 
 //Send whatsapp
@@ -92,6 +92,7 @@ app.get('/messages', (req, res) => {
 });
 
 require('./poller'); 
+
 
 
 
