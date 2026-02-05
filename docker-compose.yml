@@ -1,0 +1,15 @@
+services:
+  wa-bot-akr:
+    container_name: wa-bot-akr
+    build: .
+    volumes:
+      - ./.wwebjs_auth:/app/.wwebjs_auth
+      - ./token:/app/token  #to save the token
+      - ./logs:/app/logs  #to save logs
+    ports:
+      - "3000:3000"
+    dns:
+      - 8.8.8.8
+      - 192.168.150.101
+    restart: unless-stopped
+    tty: true
