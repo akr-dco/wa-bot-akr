@@ -68,7 +68,7 @@ pipeline {
                     sh """
                     ssh -o StrictHostKeyChecking=no ${TARGET_USER}@${TARGET_HOST} '
                         cd ${TARGET_DIR} &&
-                        docker compose pull &&
+                        docker compose dwon &&
                         docker compose up -d --force-recreate
                     '
                     """
