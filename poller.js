@@ -80,7 +80,7 @@ setInterval(async () => {
   try {
     // Calling the API to get messages from WhatsApp.
     // Replace the URL and port below with your own configuration.
-    const res = await fetch('http://192.168.192.80:3000/messages');
+    const res = await fetch('http://192.168.150.150:3000/messages');
     const data = await res.json();
 
     if (!data.success || !data.messages) {
@@ -194,7 +194,7 @@ setInterval(async () => {
             if (mfilesData && mfilesData.DisplayID && mfilesData.Title) {
               const autoReplyMessage = `✅ Terima kasih, keluhan anda telah kami terima dan akan segera ditindak lanjuti.`;
 
-              await fetch('http://192.168.192.80:3000/send-message', {
+              await fetch('http://192.168.150.150:3000/send-message', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -208,7 +208,7 @@ setInterval(async () => {
 
               const invalidFormatMessage = "*Format tidak tepat.*\n\nSilahkan input Provinsi dan detail keluhan anda *sesuai dengan format dibawah ini termasuk judul menu* :\n\nProvinsi : (Isi nomor Provinsi sesuai list dibawah)\nKeluhan : (detail keluhan dan cantumkan nomor SPBKB/SPBN)\n\nList no Provinsi\n1. Sumatera Utara\n2. Lampung\n3. DKI Jakarta\n4. Jawa Barat\n5. Jawa Tengah\n6. DIY\n7. Jawa Timur\n8. Kalimantan Barat\n9. Kalimantan Selatan\n10. Kalimantan Timur";
 
-              await fetch('http://192.168.192.80:3000/send-message', {
+              await fetch('http://192.168.150.150:3000/send-message', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -231,7 +231,7 @@ setInterval(async () => {
         try {
           // Calling the API to send messages from WhatsApp.
           // Replace the URL and port below with your own configuration.
-          const replyRes = await fetch('http://192.168.192.80:3000/send-message', {
+          const replyRes = await fetch('http://192.168.150.150:3000/send-message', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
