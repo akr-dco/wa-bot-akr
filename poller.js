@@ -163,7 +163,7 @@ setInterval(async () => {
 
             console.log('📦 Request Body:', JSON.stringify(requestBody, null, 2));
 
-            const mfilesRes = await fetch('https://m-files.akr.co.id/REST/objects/238', {
+            const mfilesRes = await fetch('http://192.168.160.112/REST/objects/238', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
